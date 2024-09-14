@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_14_200057) do
-  create_table "group_memberships", id: false, force: :cascade do |t|
+ActiveRecord::Schema[7.2].define(version: 2024_09_14_224457) do
+  create_table "group_memberships", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "group_id", null: false
     t.datetime "created_at", null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_14_200057) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "transaction_memberships", id: false, force: :cascade do |t|
+  create_table "transaction_memberships", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "transaction_id", null: false
     t.datetime "created_at", null: false
