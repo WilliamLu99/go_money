@@ -14,8 +14,8 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on "New user"
 
-    fill_in "Email", with: @user.email
-    fill_in "Password", with: @user.password
+    fill_in "Email", with: "newuser@test.com"
+    fill_in "Password", with: "newpassword"
     click_on "Create User"
 
     assert_text "User was successfully created"
