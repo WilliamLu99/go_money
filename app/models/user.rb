@@ -3,4 +3,6 @@ class User < ApplicationRecord
     has_many :transaction_memberships
     has_many :group_memberships
     has_many :groups, through: :group_memberships
+
+    has_secure_password
 end

@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def current_user
+    @current_user = User.find_by(id: session[:user_id])
+  end
+
   # GET /users/1 or /users/1.json
   def show
   end
@@ -25,6 +29,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
         format.html { redirect_to user_url(@user), notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
