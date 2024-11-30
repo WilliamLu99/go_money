@@ -1,0 +1,6 @@
+<% if @current_user.present? %>
+    <%= "Email: " + @current_user.email %>
+    <%= button_to "Logout", logout_path %>
+<% else %>
+    <p> No user </p>
+<% end %>
