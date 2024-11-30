@@ -6,8 +6,9 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:email])
 
     if @user.present? && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect_to user_path
+      id = @user.id
+      session[:user_id] = id
+      redirect_to user_path id: id
     else
       message = "Login failed, incorrect user or password"
       redirect_to login_path, notice: message
